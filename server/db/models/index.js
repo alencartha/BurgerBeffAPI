@@ -20,16 +20,16 @@ if (config.use_env_variable) {
   );
 }
 
-async function teste(){
-  try {
-    await sequelize.authenticate();
-    console.log('Connection has been established successfully.');
-  } catch (error) {
-    console.error('Unable to connect to the database:', error);
-  }
-}
+// async function teste(){
+//   try {
+//     await sequelize.authenticate();
+//     console.log('Connection has been established successfully.');
+//   } catch (error) {
+//     console.error('Unable to connect to the database:', error);
+//   }
+// }
 
-teste()
+// teste()
 
 fs.readdirSync(__dirname)
   .filter((file) => {
