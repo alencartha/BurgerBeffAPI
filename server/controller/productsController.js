@@ -1,3 +1,4 @@
+const { where } = require("sequelize");
 const dataBase = require("../db/models");
 
 //RETORNA TODOS OS PRODUTOS
@@ -5,7 +6,7 @@ const getProducts = (req, res) => {
   dataBase.Products.findAll()
     .then((result) => {
       res.status(200).json(result);
-      connection.end()
+      connection.end();
     })
     .catch(() =>
       res.json({
@@ -16,10 +17,9 @@ const getProducts = (req, res) => {
 
 //LOCALIZA PRODUTO POR ID
 const getProductById = (req, res) => {
-  dataBase.Products.findAll({ where: { id: req.params.uid } })
+  dataBase.Products.findAll({ where: { id: req.params.id } })
     .then((result) => {
       res.status(200).json(result);
-      connection.end()
     })
     .catch(() =>
       res.json({
@@ -42,7 +42,6 @@ const postProduct = (req, res) => {
   })
     .then((result) => {
       res.status(201).json(result);
-      connection.end()
     })
     .catch(() =>
       res.json({
@@ -83,7 +82,7 @@ const deleteProduct = (req, res) => {
   dataBase.Users.destroy({ where: { id: req.params.id } })
     .then(() => {
       res.status(200).json({
-        message: "Usuário deletado",
+        message: "Produto excluído do cardápio",
       });
     })
     .catch(() => {
