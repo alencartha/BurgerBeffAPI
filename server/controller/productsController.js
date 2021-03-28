@@ -5,6 +5,7 @@ const getProducts = (req, res) => {
   dataBase.Products.findAll()
     .then((result) => {
       res.status(200).json(result);
+      connection.end()
     })
     .catch(() =>
       res.json({
@@ -18,6 +19,7 @@ const getProductById = (req, res) => {
   dataBase.Products.findAll({ where: { id: req.params.uid } })
     .then((result) => {
       res.status(200).json(result);
+      connection.end()
     })
     .catch(() =>
       res.json({
@@ -40,6 +42,7 @@ const postProduct = (req, res) => {
   })
     .then((result) => {
       res.status(201).json(result);
+      connection.end()
     })
     .catch(() =>
       res.json({
