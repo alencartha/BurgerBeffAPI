@@ -9,25 +9,26 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       name: {
-        type: Sequelize.STRING,
         allowNull: false,
+        type: Sequelize.STRING,
       },
       email: {
         allowNull: false,
-        type: Sequelize.STRING,
         unique: true,
+        type: Sequelize.STRING,
       },
       password: {
-        type: Sequelize.STRING,
         allowNull: false,
+        type: Sequelize.STRING,
       },
       role: {
-        type: Sequelize.STRING,
         allowNull: false,
+        type: Sequelize.STRING,
       },
       restaurant: {
-        type: Sequelize.STRING,
         allowNull: false,
+        defaultValue: "Burger Beef",
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
