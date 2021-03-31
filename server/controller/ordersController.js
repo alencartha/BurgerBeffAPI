@@ -29,9 +29,9 @@ const getOrderById = (req, res) => {
 
 //INSERE UM PEDIDO
 const postOrder = (req, res) => {
-  const { user_id, client_name, table, status } = req.body;
+  const { users_id, client_name, table, status } = req.body;
   dataBase.Orders.create({
-    user_id,
+    users_id,
     client_name,
     table,
     status,

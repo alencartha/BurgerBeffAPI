@@ -17,7 +17,7 @@ const getProducts = (req, res) => {
 
 //LOCALIZA PRODUTO POR ID
 const getProductById = (req, res) => {
-  dataBase.Products.findAll({ where: { id: req.params.id } })
+  dataBase.Products.findAll({ where: { id: req.params.productid } })
     .then((result) => {
       res.status(200).json(result);
     })
@@ -63,7 +63,7 @@ const updateProduct = (req, res) => {
       type,
       sub_type,
     },
-    { where: { id: req.params.id } }
+    { where: { id: req.params.productid } }
   )
     .then(() => {
       res.status(200).json({
@@ -77,12 +77,12 @@ const updateProduct = (req, res) => {
     });
 };
 
-//DELETA UM PRODUTO
+//DELETAR UM PRODUTO
 const deleteProduct = (req, res) => {
-  dataBase.Users.destroy({ where: { id: req.params.id } })
+  dataBase.Products.destroy({ where: { id: req.params.productid } })
     .then(() => {
       res.status(200).json({
-        message: "Produto excluído do cardápio",
+        message: "Produto excluído com sucesso!",
       });
     })
     .catch(() => {
@@ -91,7 +91,6 @@ const deleteProduct = (req, res) => {
       });
     });
 };
-
 module.exports = {
   getProducts,
   getProductById,
