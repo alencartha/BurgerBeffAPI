@@ -2,7 +2,11 @@ const dataBase = require("../db/models");
 
 //RETORNA TODOS OS USUÁRIOS
 const getUsers = (req, res) => {
-  dataBase.Users.findAll()
+  dataBase.Users.findAll({
+    attributes: {
+      exclude: ["password"],
+    },
+  })
     .then((result) => {
       res.status(200).json(result);
     })
@@ -15,7 +19,12 @@ const getUsers = (req, res) => {
 
 //LOCALIZA USUÁRIO POR ID
 const getUserById = (req, res) => {
-  dataBase.Users.findAll({ where: { id: req.params.uid } })
+  dataBase.Users.findAll({
+    attributes: {
+      exclude: ["password"],
+    },
+    where: { id: req.params.uid },
+  })
     .then((result) => {
       res.status(200).json(result);
     })
