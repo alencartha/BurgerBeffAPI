@@ -9,7 +9,7 @@ const getProducts = (req, res) => {
       connection.end();
     })
     .catch(() =>
-      res.json({
+      res.status(400).json({
         message: "Não foi possível processar a operação",
       })
     );
@@ -22,7 +22,7 @@ const getProductById = (req, res) => {
       res.status(200).json(result);
     })
     .catch(() =>
-      res.json({
+      res.status(400).json({
         message: "Não foi possível processar a operação",
       })
     );
@@ -44,7 +44,7 @@ const postProduct = (req, res) => {
       res.status(201).json(result);
     })
     .catch(() =>
-      res.json({
+      res.status(400).json({
         message: "Não foi possível processar a operação",
       })
     );
@@ -70,11 +70,11 @@ const updateProduct = (req, res) => {
         message: "Dados de usuário atualizados com sucesso!",
       });
     })
-    .catch(() => {
-      res.json({
+    .catch(() =>
+      res.status(400).json({
         message: "Não foi possível processar a operação",
-      });
-    });
+      })
+    );
 };
 
 //DELETAR UM PRODUTO
@@ -85,12 +85,13 @@ const deleteProduct = (req, res) => {
         message: "Produto excluído com sucesso!",
       });
     })
-    .catch(() => {
-      res.json({
+    .catch(() =>
+      res.status(400).json({
         message: "Não foi possível processar a operação",
-      });
-    });
+      })
+    );
 };
+
 module.exports = {
   getProducts,
   getProductById,

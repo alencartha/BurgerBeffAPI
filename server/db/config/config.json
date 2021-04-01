@@ -1,42 +1,41 @@
 {
-    "development": {
-      "username": "cfednjqvqskeun",
-      "password": "e6580c35684b0cf153617475db095590f2cfcc0a795182adbe61a3392290f3f4",
-      "database": "d844318lih20lt",
-      "host": "ec2-23-22-191-232.compute-1.amazonaws.com",
-      "dialect": "postgres",
-      "dialectOptions": {
-        "ssl": {
-          "require": true,
-          "rejectUnauthorized": false
-        }
+  "development": {
+    "username": "yzcazleoilemwf",
+    "password": "1219efa8047227cdc772a36d50bb5c9090da0b38574ca095b86737fd9aeabe8f",
+    "database": "dd7ptsqkbcftob",
+    "host": "ec2-54-167-168-52.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
       }
-    },
-    "test": {
-      "username": "cfednjqvqskeun",
-      "password": "e6580c35684b0cf153617475db095590f2cfcc0a795182adbe61a3392290f3f4",
-      "database": "d844318lih20lt",
-      "host": "ec2-23-22-191-232.compute-1.amazonaws.com",
-      "dialect": "postgres",
-      "dialectOptions": {
-        "ssl": {
-          "require": true,
-          "rejectUnauthorized": false
-        }
+    }
+  },
+  "test": {
+    "username": "yzcazleoilemwf",
+    "password": "1219efa8047227cdc772a36d50bb5c9090da0b38574ca095b86737fd9aeabe8f",
+    "database": "dd7ptsqkbcftob",
+    "host": "ec2-54-167-168-52.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
       }
-    },
-    "production": {
-      "username": "cfednjqvqskeun",
-      "password": "e6580c35684b0cf153617475db095590f2cfcc0a795182adbe61a3392290f3f4",
-      "database": "d844318lih20lt",
-      "host": "ec2-23-22-191-232.compute-1.amazonaws.com",
-      "dialect": "postgres",
-      "dialectOptions": {
-        "ssl": {
-          "require": true,
-          "rejectUnauthorized": false
-        }
+    }
+  },
+  "production": {
+    "username": "yzcazleoilemwf",
+    "password": "1219efa8047227cdc772a36d50bb5c9090da0b38574ca095b86737fd9aeabe8f",
+    "database": "dd7ptsqkbcftob",
+    "host": "ec2-54-167-168-52.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
       }
     }
   }
-  
+}
