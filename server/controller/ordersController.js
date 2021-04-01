@@ -71,23 +71,40 @@ const getOrderById = (req, res) => {
     );
 };
 
-const postOrder = (req, res) => {
+const postOrder = async (req, res) => {
   const { user_id, client_name, table, status, processedAt } = req.body;
-  dataBase.Orders.create({
+  await dataBase.Orders.create({
     user_id,
     client_name,
     table,
     status,
     processedAt,
-  })
-    .then((result) => {
-      res.status(201).json(result);
-    })
-    .catch(() =>
-      res.status(400).json({
-        message: 'Não foi possível processar a operação',
+  }).then((result) => {
+    req.body.products
+      .map((item) => {
+        const itemProduct = dataBase.Products.findByPk(item.id);
+        if (!itemProduct) {
+          return res.status(400).json({
+            message: 'Erro ao buscar produto',
+          });
+        }
+
+        const itemOrders = {
+          order_id: result.id,
+          product_id: item.id,
+          amount: item.amount,
+        };
+
+        dataBase.ProductsOrders.create(itemOrders);
+
+        return res.status(200).json(result);
       })
-    );
+      .catch(() =>
+        res.status(400).json({
+          message: 'Não foi possível processar a operação',
+        })
+      );
+  });
 };
 
 const updateOrder = (req, res) => {
