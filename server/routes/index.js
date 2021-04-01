@@ -2,14 +2,12 @@ const { Router } = require('express');
 const usersRouter = require('./users');
 const productsRouter = require('./products');
 const ordersRouter = require('./orders');
-const authRouter = require('./auth');
 const morgan = require('morgan');
 
 const router = Router();
 
 router.use(morgan('dev'));
 
-router.use('/auth', authRouter);
 router.use('/users', usersRouter);
 router.use('/products', productsRouter);
 router.use('/orders', ordersRouter);
