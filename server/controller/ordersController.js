@@ -2,10 +2,32 @@ const dataBase = require("../db/models");
 
 //RETORNA TODOS OS PEDIDOS
 const getOrders = (req, res) => {
-  dataBase.Orders.findAll()
+  dataBase.Orders.findAll({
+    include: [
+      {
+        model: dataBase.Products,
+        as: "Products",
+        required: false,
+        attributes: [
+          "id",
+          "name",
+          "price",
+          "flavor",
+          "complement",
+          "image",
+          "type",
+          "sub_type",
+        ],
+        through: {
+          model: dataBase.ProductsOrders,
+          as: "ProductsOrders",
+          attributes: ["amount"],
+        },
+      },
+    ],
+  })
     .then((result) => {
       res.status(200).json(result);
-      connection.end();
     })
     .catch(() =>
       res.status(400).json({
@@ -16,7 +38,31 @@ const getOrders = (req, res) => {
 
 //LOCALIZA PEDIDO POR ID
 const getOrderById = (req, res) => {
-  dataBase.Orders.findAll({ where: { id: req.params.orderId } })
+  dataBase.Orders.findAll({
+    include: [
+      {
+        model: dataBase.Products,
+        as: "Products",
+        required: false,
+        attributes: [
+          "id",
+          "name",
+          "price",
+          "flavor",
+          "complement",
+          "image",
+          "type",
+          "sub_type",
+        ],
+        through: {
+          model: dataBase.ProductsOrders,
+          as: "ProductsOrders",
+          attributes: ["amount"],
+        },
+        where: { id: req.params.orderId },
+      },
+    ],
+  })
     .then((result) => {
       res.status(200).json(result);
     })
@@ -29,12 +75,13 @@ const getOrderById = (req, res) => {
 
 //INSERE UM PEDIDO
 const postOrder = (req, res) => {
-  const { user_id, client_name, table, status } = req.body;
+  const { user_id, client_name, table, status, processedAt } = req.body;
   dataBase.Orders.create({
     user_id,
     client_name,
     table,
     status,
+    processedAt,
   })
     .then((result) => {
       res.status(201).json(result);
