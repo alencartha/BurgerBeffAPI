@@ -1,10 +1,9 @@
-const dataBase = require("../db/models");
+const dataBase = require('../db/models');
 
-//RETORNA TODOS OS USUÁRIOS
 const getUsers = (req, res) => {
   dataBase.Users.findAll({
     attributes: {
-      exclude: ["password"],
+      exclude: ['password'],
     },
   })
     .then((result) => {
@@ -12,16 +11,15 @@ const getUsers = (req, res) => {
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-//LOCALIZA USUÁRIO POR ID
 const getUserById = (req, res) => {
   dataBase.Users.findAll({
     attributes: {
-      exclude: ["password"],
+      exclude: ['password'],
     },
     where: { id: req.params.uid },
   })
@@ -30,12 +28,11 @@ const getUserById = (req, res) => {
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-//INSERE UM USUÁRIO
 const postUser = (req, res) => {
   const { name, email, password, role, restaurant } = req.body;
   dataBase.Users.create({
@@ -50,12 +47,11 @@ const postUser = (req, res) => {
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-//ALTERA DADOS DE USUÁRIO
 const updateUser = (req, res) => {
   const { name, email, password, role, restaurant } = req.body;
   dataBase.Users.update(
@@ -70,29 +66,34 @@ const updateUser = (req, res) => {
   )
     .then(() => {
       res.status(200).json({
-        message: "Dados de usuário atualizados com sucesso!",
+        message: 'Dados de usuário atualizados com sucesso!',
       });
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-//DELETA UM USUÁRIO
 const deleteUser = (req, res) => {
   dataBase.Users.destroy({ where: { id: req.params.uid } })
     .then(() => {
       res.status(200).json({
-        message: "Usuário deletado",
+        message: 'Usuário deletado',
       });
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-module.exports = { getUsers, getUserById, postUser, updateUser, deleteUser };
+module.exports = {
+  getUsers,
+  getUserById,
+  postUser,
+  updateUser,
+  deleteUser,
+};

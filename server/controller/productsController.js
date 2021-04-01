@@ -1,7 +1,6 @@
-const { where } = require("sequelize");
-const dataBase = require("../db/models");
+const { where } = require('sequelize');
+const dataBase = require('../db/models');
 
-//RETORNA TODOS OS PRODUTOS
 const getProducts = (req, res) => {
   dataBase.Products.findAll()
     .then((result) => {
@@ -10,12 +9,11 @@ const getProducts = (req, res) => {
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-//LOCALIZA PRODUTO POR ID
 const getProductById = (req, res) => {
   dataBase.Products.findAll({ where: { id: req.params.productid } })
     .then((result) => {
@@ -23,12 +21,11 @@ const getProductById = (req, res) => {
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-//INSERE UM PRODUTO
 const postProduct = (req, res) => {
   const { name, price, flavor, complement, image, type, sub_type } = req.body;
   dataBase.Products.create({
@@ -45,12 +42,11 @@ const postProduct = (req, res) => {
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-//ALTERA UM PRODUTO
 const updateProduct = (req, res) => {
   const { name, price, flavor, complement, image, type, sub_type } = req.body;
   dataBase.Products.update(
@@ -67,27 +63,26 @@ const updateProduct = (req, res) => {
   )
     .then(() => {
       res.status(200).json({
-        message: "Dados de usuário atualizados com sucesso!",
+        message: 'Dados de usuário atualizados com sucesso!',
       });
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-//DELETAR UM PRODUTO
 const deleteProduct = (req, res) => {
   dataBase.Products.destroy({ where: { id: req.params.productid } })
     .then(() => {
       res.status(200).json({
-        message: "Produto excluído com sucesso!",
+        message: 'Produto excluído com sucesso!',
       });
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };

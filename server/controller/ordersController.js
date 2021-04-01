@@ -1,27 +1,26 @@
-const dataBase = require("../db/models");
+const dataBase = require('../db/models');
 
-//RETORNA TODOS OS PEDIDOS
 const getOrders = (req, res) => {
   dataBase.Orders.findAll({
     include: [
       {
         model: dataBase.Products,
-        as: "Products",
+        as: 'Products',
         required: false,
         attributes: [
-          "id",
-          "name",
-          "price",
-          "flavor",
-          "complement",
-          "image",
-          "type",
-          "sub_type",
+          'id',
+          'name',
+          'price',
+          'flavor',
+          'complement',
+          'image',
+          'type',
+          'sub_type',
         ],
         through: {
           model: dataBase.ProductsOrders,
-          as: "ProductsOrders",
-          attributes: ["amount"],
+          as: 'ProductsOrders',
+          attributes: ['amount'],
         },
       },
     ],
@@ -31,33 +30,32 @@ const getOrders = (req, res) => {
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-//LOCALIZA PEDIDO POR ID
 const getOrderById = (req, res) => {
   dataBase.Orders.findAll({
     include: [
       {
         model: dataBase.Products,
-        as: "Products",
+        as: 'Products',
         required: false,
         attributes: [
-          "id",
-          "name",
-          "price",
-          "flavor",
-          "complement",
-          "image",
-          "type",
-          "sub_type",
+          'id',
+          'name',
+          'price',
+          'flavor',
+          'complement',
+          'image',
+          'type',
+          'sub_type',
         ],
         through: {
           model: dataBase.ProductsOrders,
-          as: "ProductsOrders",
-          attributes: ["amount"],
+          as: 'ProductsOrders',
+          attributes: ['amount'],
         },
         where: { id: req.params.orderId },
       },
@@ -68,12 +66,11 @@ const getOrderById = (req, res) => {
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-//INSERE UM PEDIDO
 const postOrder = (req, res) => {
   const { user_id, client_name, table, status, processedAt } = req.body;
   dataBase.Orders.create({
@@ -88,12 +85,11 @@ const postOrder = (req, res) => {
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-//ALTERA UM PEDIDO
 const updateOrder = (req, res) => {
   const { user_id, client_name, table, status } = req.body;
   dataBase.Orders.update(
@@ -107,27 +103,26 @@ const updateOrder = (req, res) => {
   )
     .then(() => {
       res.status(200).json({
-        message: "Pedido atualizado com sucesso!",
+        message: 'Pedido atualizado com sucesso!',
       });
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
 
-//DELETA UM PEDIDO
 const deleteOrder = (req, res) => {
   dataBase.Orders.destroy({ where: { id: req.params.orderId } })
     .then(() => {
       res.status(200).json({
-        message: "Pedido excluído",
+        message: 'Pedido excluído',
       });
     })
     .catch(() =>
       res.status(400).json({
-        message: "Não foi possível processar a operação",
+        message: 'Não foi possível processar a operação',
       })
     );
 };
