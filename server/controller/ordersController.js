@@ -37,6 +37,7 @@ const getOrders = (req, res) => {
 
 const getOrderById = (req, res) => {
   dataBase.Orders.findAll({
+    where: { id: req.params.orderId },
     include: [
       {
         model: dataBase.Products,
@@ -57,7 +58,6 @@ const getOrderById = (req, res) => {
           as: 'ProductsOrders',
           attributes: ['amount'],
         },
-        where: { id: req.params.orderId },
       },
     ],
   })
