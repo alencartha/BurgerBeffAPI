@@ -16,8 +16,10 @@ A API foi desenvolvida para a aplicação front-end da [Burger Beef](https://bur
 
 A API Burger Beef contém os seguintes endpoints:
 
+
 ### /auth
-#### POST /auth
+##### POST /auth
+
 
 ### /users
 ##### GET /users
@@ -26,12 +28,14 @@ A API Burger Beef contém os seguintes endpoints:
 ##### PUT /users/:uid
 ##### DELETE /users/:uid
 
+
 ### /products
 ##### GET /products
 ##### GET /products/:productid
 ##### POST /products
 ##### PUT /products/:productid
 ##### DELETE /products/:productid
+
 
 ### /orders
 ##### GET /orders
