@@ -1,6 +1,6 @@
 # Burger Beef - API
 
-Acesse a API [AQUI](https://apiburgerbeef.herokuapp.com/).
+Acesse a API clicando [AQUI](https://apiburgerbeef.herokuapp.com/).
 
 ## Índice
 
