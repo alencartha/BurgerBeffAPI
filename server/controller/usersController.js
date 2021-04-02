@@ -1,4 +1,6 @@
 const dataBase = require('../db/models');
+const jwt = require('jsonwebtoken');
+const authConfig = require('./config/auth');
 
 const getUsers = (req, res) => {
   dataBase.Users.findAll({
@@ -42,8 +44,11 @@ const postUser = (req, res) => {
     role,
     restaurant,
   })
-    .then((result) => {
-      res.status(201).json(result);
+    .then((user) => {
+      const token = jwt.sign({ id: user.id }, authConfig.secret, {
+        expiresIn: 86400,
+      });
+      res.status(201).send({ 'usuário criado': user, token });
     })
     .catch(() =>
       res.status(400).json({
