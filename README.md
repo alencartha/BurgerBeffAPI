@@ -1,11 +1,14 @@
 # Burger Beef - API
 
+Acesse a API [AQUI](https://apiburgerbeef.herokuapp.com/).
+
 ## Índice
 
 * [1. Sobre](#1-sobre)
 * [2. API](#2-api)
 * [3. Considerações](#3-consideracoes)
-* [4. Desenvolvedora](#3-desenvolvedora)
+* [4. Tecnologias Utilizadas](#5-tecnologias-utilizadas)
+* [5. Desenvolvedora](#5-desenvolvedora)
 
 
 ## 1. Sobre
@@ -44,13 +47,24 @@ A API Burger Beef contém os seguintes endpoints:
 ##### • PUT /orders/:orderId
 ##### • DELETE /orders/:orderId
 
-## Considerações:
+## 3. Considerações:
 
 -> Para os endpoints de /orders e /products, realizei um tratamento no qual só é possível acessá-los se o usuário possuir um Token (este, fornecido no momento em que o usuário é criado). 
 
 -> Os Tokens expiram em 1 dia, mas a cada autenticação do usuário no aplicativo é possível visualizar o Token correspondente à sessão.
 
-## Desenvolvedora:
+## 4. Tecnologias Utilizadas:
+
+  • Node.js,
+  • Express, 
+  • Sequeliz, 
+  • JWT Token, 
+  • PostgreSQL,
+  • Dbeaver (visualizar tabelas do banco de dados e suas relações), 
+  • Postman (para teste de requisições),
+  • Heroku (deploy da API).
+
+## 5. Desenvolvedora:
 
  [Thaís Alencar](https://github.com/alencartha)
 
