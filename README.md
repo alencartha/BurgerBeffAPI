@@ -55,14 +55,14 @@ A API Burger Beef contém os seguintes endpoints:
 
 ## 4. Tecnologias Utilizadas:
 
- ###### • Node.js,
- ###### • Express, 
- ###### • Sequeliz, 
- ###### • JWT Token, 
- ###### • PostgreSQL,
- ###### • Dbeaver (visualizar tabelas do banco de dados e suas relações), 
- ###### • Postman (para teste de requisições),
- ###### • Heroku (deploy da API).
+ ##### • Node.js,
+ ##### • Express, 
+ ##### • Sequelize, 
+ ##### • JWT Token, 
+ ##### • PostgreSQL,
+ ##### • Dbeaver (visualizar tabelas do banco de dados e suas relações), 
+ ##### • Postman (para teste de requisições),
+ ##### • Heroku (deploy da API).
 
 ## 5. Desenvolvedora:
 
