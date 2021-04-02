@@ -25,8 +25,8 @@ router.use((req, res, next) => {
 router.use((error, req, res, next) => {
   res.status(error.status || 500);
   return res.send({
-    erro: {
-      mensagem: error.message,
+   mensagem: {
+      apiBurgerBeff_Informa: error.message,
     },
   });
 });
