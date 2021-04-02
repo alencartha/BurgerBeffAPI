@@ -16,7 +16,7 @@ router.use('/auth', authRouter);
 
 router.use((req, res, next) => {
   const erro = new Error(
-    'Bem vindo(a) à API Burger Beef. Infelizmente, não conseguimos localizar a rota informada. Digite o endpoint desejado e visualize nossa API!'
+    'Bem vindo(a) à API Burger Beef. Digite o endpoint desejado e o método para consumir nossa API!'
   );
   erro.status = 404;
   next(erro);
