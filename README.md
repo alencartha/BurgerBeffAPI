@@ -51,7 +51,7 @@ A API Burger Beef contém os seguintes endpoints:
 
 -> Para os endpoints de /orders e /products, realizei um tratamento no qual só é possível acessá-los se o usuário possuir um Token (este, fornecido no momento em que o usuário é criado). 
 
--> Os Tokens expiram em 1 dia, mas a cada autenticação do usuário no aplicativo é possível visualizar o Token correspondente à sessão.
+-> Os Tokens expiram em 24h, mas a cada autenticação do usuário no aplicativo é possível visualizar o Token correspondente à sessão.
 
 ## 4. Tecnologias Utilizadas:
 
