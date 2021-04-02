@@ -19,33 +19,33 @@ A API foi desenvolvida para a aplicação front-end da [Burger Beef](https://bur
 
 A API Burger Beef contém os seguintes endpoints:
 
+####  `/auth`
 
-### /auth
-##### • POST /auth
+* `POST /auth`
 
+####  `/users`
 
-### /users
-##### • GET /users
-##### • GET /users/:uid
-##### • POST /users
-##### • PUT /users/:uid
-##### • DELETE /users/:uid
+* `GET /users`
+* `GET /users/:uid`
+* `POST /users`
+* `PUT /users/:uid`
+* `DELETE /users/:uid`
 
+#### `/products`
 
-### /products
-##### • GET /products
-##### • GET /products/:productid
-##### • POST /products
-##### • PUT /products/:productid
-##### • DELETE /products/:productid
+* `GET /products`
+* `GET /products/:productid`
+* `POST /products`
+* `PUT /products/:productid`
+* `DELETE /products/:productid`
 
+####  `/orders`
 
-### /orders
-##### • GET /orders
-##### • GET /orders/:orderId
-##### • POST /orders
-##### • PUT /orders/:orderId
-##### • DELETE /orders/:orderId
+* `GET /orders`
+* `GET /orders/:orderId`
+* `POST /orders`
+* `PUT /orders/:orderId`
+* `DELETE /orders/:orderId`
 
 ## 3. Considerações:
 
@@ -55,14 +55,14 @@ A API Burger Beef contém os seguintes endpoints:
 
 ## 4. Tecnologias Utilizadas:
 
- ##### • Node.js,
- ##### • Express, 
- ##### • Sequelize, 
- ##### • JWT Token, 
- ##### • PostgreSQL,
- ##### • Dbeaver (visualizar tabelas do banco de dados e suas relações), 
- ##### • Postman (para teste de requisições),
- ##### • Heroku (deploy da API).
+* `Node.js`
+* `Express`
+* `Sequelize`
+* `JWT Token`
+* `PostgreSQL`
+* `Dbeaver (visualizar tabelas do banco de dados e suas relações)`
+* `Postman (para teste de requisições)`
+* `Heroku (deploy da API)`
 
 ## 5. Desenvolvedora:
 
