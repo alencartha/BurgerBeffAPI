@@ -1,6 +1,6 @@
 const dataBase = require('../db/models');
 const jwt = require('jsonwebtoken');
-const authConfig = require('./config/auth');
+const authConfig = require('../controller/config/auth.json');
 
 const getUsers = (req, res) => {
   dataBase.Users.findAll({
