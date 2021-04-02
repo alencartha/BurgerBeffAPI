@@ -13,7 +13,7 @@ Acesse a API clicando [AQUI](https://apiburgerbeef.herokuapp.com/).
 
 ## 1. Sobre
 
-A API foi desenvolvida para a aplicação front-end da [Burger Beef](https://burger-beef02.vercel.app/): um pequeno restaurante de hambúrgueres, que possui uma interface na qual é possível realizar pedidos utilizando um tablet, e enviá-los para a cozinha para que sejam preparados de forma ordenada e eficiente.
+A API foi desenvolvida para a aplicação front-end do [Burger Beef](https://burger-beef02.vercel.app/): um pequeno restaurante de hambúrgueres, que possui uma interface na qual é possível realizar pedidos utilizando um tablet, e enviá-los para a cozinha para que sejam preparados de forma ordenada e eficiente.
 
 ## 2. API
 
