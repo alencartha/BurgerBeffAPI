@@ -49,7 +49,7 @@ A API Burger Beef contém os seguintes endpoints:
 
 ## 3. Considerações:
 
--> Para os endpoints de /orders e /products, realizei um tratamento no qual só é possível acessá-los se o usuário possuir um Token (este, fornecido no momento em que o usuário é criado). 
+-> Para os endpoints de `/users` - *exceto metódo POST*,  `/orders` e `/products`, realizei um tratamento no qual só é possível acessá-los se o usuário possuir um Token (este, fornecido no momento em que o usuário é criado). 
 
 -> Os Tokens expiram em 24h, mas a cada autenticação do usuário no aplicativo é possível visualizar o Token correspondente à sessão.
 
@@ -66,7 +66,7 @@ A API Burger Beef contém os seguintes endpoints:
 
 ## 5. Desenvolvedora:
 
- [Thaís Alencar](https://github.com/alencartha)
+ [Thaís Alencar](https://github.com/alencartha).
 
 
 
