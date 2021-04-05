@@ -1,4 +1,3 @@
-const { where } = require('sequelize');
 const dataBase = require('../db/models');
 
 const getProducts = (req, res) => {
